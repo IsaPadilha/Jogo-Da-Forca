@@ -32,13 +32,13 @@ string[] palavras = [
         "UVAIA"
 ];
 
-int indiceAleatorio = RandomNumberGenerator.GetInt32(palavras.Length + 1);
+int indiceAleatorio = RandomNumberGenerator.GetInt32(palavras.Length);
 
 string palavraSecreta = palavras[indiceAleatorio];
 
 char[] letrasCorretas = new char[palavraSecreta.Length];
 
-for (int contadorLetras = 0; contadorLetras < 7; contadorLetras++)
+for (int contadorLetras = 0; contadorLetras < palavraSecreta.Length; contadorLetras++)
 {
     letrasCorretas[contadorLetras] = '_';
 }
@@ -174,7 +174,7 @@ while (true)
         if (chute == letraSecretaAtual)
         {
             letrasCorretas[contadorPalavraSecreta] = chute;
-            jogadorAcertou = true;
+            letraFoiEncontada = true;
         }
     }
     if (!letraFoiEncontada)
