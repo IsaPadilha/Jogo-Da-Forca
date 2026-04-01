@@ -57,6 +57,12 @@ while (true)
     Console.WriteLine("Erros cometidos: " + contadorErros + " erros");
     Console.WriteLine("Chutes: ");
 
+    for (int contadorLetras = 0; contadorLetras < palavraSecreta.Length; contadorLetras++)
+    {
+        Console.Write(letrasCorretas[contadorLetras]);
+    }
+
+    Console.WriteLine("\n--------------------------------------------");
 
     if (contadorErros == 0)
     {
@@ -143,19 +149,17 @@ while (true)
         Console.WriteLine(@"_|____              ");
     }
 
+    Console.WriteLine("\n--------------------------------------------");
+
     if (jogadorAcertou)
     {
         Console.WriteLine($"Parabéns, você acertou! A palavra secreta era: {palavraSecreta}");
+        break;
     }
     else if (jogadorPerdeu)
     {
         Console.WriteLine($"Que pena, você perdeu! A palavra era: {palavraSecreta}");
-    }
-    break;
-
-    for (int contadorLetras = 0; contadorLetras < 7; contadorLetras++)
-    {
-        Console.Write(letrasCorretas[contadorLetras]);
+        break;
     }
 
     Console.Write("\nDigite uma letra: ");
@@ -181,16 +185,12 @@ while (true)
     string letrasCorretasCompleta = string.Join("", letrasCorretas);
 
     if (palavraSecreta == letrasCorretasCompleta)
-    {
-        Console.WriteLine($"Parabéns, você acertou! A palavra secreta era: {palavraSecreta}");
         jogadorAcertou = true;
-    }
 
     if (contadorErros > 5)
-    {
-        Console.WriteLine($"Que pena, você perdeu! A palavra era: {palavraSecreta}");
         jogadorPerdeu = true;
-    }
+
 }
+
 Console.WriteLine("Digite ENTER para sair...");
 Console.ReadLine();
